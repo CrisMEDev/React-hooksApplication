@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { RealExampleRef } from './components/04-useRef/RealExampleRef';
+import { Layout } from './components/05-useLayoutEffect/LayoutEffect';
 
 ReactDOM.render(
 
-    <RealExampleRef />,
+    <Layout />,
 
     document.getElementById('root')
 
