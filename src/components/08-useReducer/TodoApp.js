@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer } from 'react';
 
+import { TodoList } from './TodoList';
 import { todoReducer } from './todoReducer';
 import { useForm } from '../../hooks/useForm';
 
@@ -26,8 +27,6 @@ export const TodoApp = () => {
         description: ''
     });
     
-    console.log(todosState);
-
     // Si los todos cambian significa que se debe actualizar el local storage
     useEffect(() => {
         
@@ -82,28 +81,7 @@ export const TodoApp = () => {
             <div className="row">
                 
                 <div className="col-7">
-                    <ul className="list-group list-group-flush">
-                        {
-                            todosState.map( (todo, index) =>
-                                <li
-                                    key={todo.id}
-                                    className="list-group-item"
-                                >
-                                    <p
-                                        onClick={ () => { handleToggle( todo.id ) } }
-                                        className={ `text-center non-selectable` + ` ${ todo.done && 'complete' }` }>
-                                        {index + 1}. {todo.desc}
-                                    </p>
-
-                                    <button
-                                        onClick={ () => handleRemove( todo.id ) }
-                                        className="btn btn-outline-danger" >
-                                        Borrar
-                                    </button>
-                                </li>
-                            )
-                        }
-                    </ul>
+                    <TodoList todos={todosState} handleRemove={handleRemove} handleToggle={handleToggle} />
                 </div>
 
                 <div className="col-5">
