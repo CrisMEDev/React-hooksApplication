@@ -1,14 +1,13 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-// import { CounterWithCustomHook } from './components/01-useState/CounterWithCustomHook';
+import { TodoApp } from './components/08-useReducer/TodoApp';
 
-// ReactDOM.render(
+ReactDOM.render(
 
-//     <CounterWithCustomHook />,
+    <TodoApp />,
 
-//     document.getElementById('root')
+    document.getElementById('root')
 
-// );
+);
 
-import './components/08-useReducer/intro-reducer';
