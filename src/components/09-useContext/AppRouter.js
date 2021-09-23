@@ -21,18 +21,21 @@ export const AppRouter = () => {
 
                 <NavBar />
 
-                <Switch>
+                <div className="container">
+                    <Switch>
 
-                    <Route exact path="/" component={ HomeScreen } />
-                    <Route exact path="/about" component={ AboutScreen } />
-                    <Route exact path="/login" component={ LoginScreen } />
+                        <Route exact path="/" component={ HomeScreen } />
+                        <Route exact path="/about" component={ AboutScreen } />
+                        <Route exact path="/login" component={ LoginScreen } />
 
-                    {/* Navegacion en caso de una url invalida */}
-                    {/* <Route exact component={ _404Component } /> */}
+                        {/* Navegacion en caso de una url invalida */}
+                        {/* <Route exact component={ _404Component } /> */}
 
-                    <Redirect to="./" />
+                        <Redirect to="./" />
 
-                </Switch>
+                    </Switch>
+                </div>
+
 
             </div>
 
