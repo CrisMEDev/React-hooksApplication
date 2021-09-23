@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { CounterWithCustomHook } from './components/01-useState/CounterWithCustomHook';
+import { MainApp } from './components/09-useContext/MainApp';
 
 ReactDOM.render(
 
-    <CounterWithCustomHook />,
+    <MainApp />,
 
     document.getElementById('root')
 
