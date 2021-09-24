@@ -4,6 +4,10 @@ export const useForm = ( initialState = {} ) => {
     
     const [formValuesState, setFormValuesState] = useState(initialState)
 
+    const reset = () => {
+        setFormValuesState( initialState );
+    }
+
     const handleInputChange = ( { target } ) => {   // Se extrae el target del event
 
         // console.log(event.target.name);
@@ -16,6 +20,6 @@ export const useForm = ( initialState = {} ) => {
 
     }
 
-    return [ formValuesState, handleInputChange ];
+    return [ formValuesState, handleInputChange, reset ];
 
 }
