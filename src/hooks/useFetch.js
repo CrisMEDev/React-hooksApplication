@@ -21,22 +21,18 @@ export const useFetch = ( url ) => {
             .then( resp => resp.json() )
             .then( data => {
 
-                // Se coloca un timeout para intencionalmente provocar un error
-                // en el renderizado al usar el boton show/hide
-                setTimeout( () => {
+                if ( isMounted.current ){
+                    setState({
+                        loading: false,
+                        error: null,
+                        data
+                    });
+                } else {
+                    console.log('setState no se llamó para el renderizado');
+                }
 
-                    if ( isMounted.current ){
-                        setState({
-                            loading: false,
-                            error: null,
-                            data
-                        });
-                    } else {
-                        console.log('setState no se llamó para el renderizado');
-                    }
-
-                }, 3000);
-
+            }).catch( () => {
+                setState({ data: null, error: 'No se cargó la info', loading: false });
             });
 
     }, [url]);
